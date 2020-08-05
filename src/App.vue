@@ -90,35 +90,30 @@
 
                         </div>
                     </div>
+
                     <div class="field">
-                        <label for="clientGroup">Group*</label>
+                        <label for="attendDoc">Group* </label>
                         <div class="select-field">
-                            <select id="clientGroup">
-                                <option selected disabled>
-                                    Choose client group
+                            <select v-model="clientGroup" id="clientGroup">
+                                <option value="OMS">
+                                    OMS
                                 </option>
                                 <option value="VIP">
                                     VIP
                                 </option>
-                                <option value="OMS">
-                                    OMS
-                                </option>
                                 <option value="Problematic">
                                     Problematic
                                 </option>
-                                <small class="helper-text invalid"
-                                       v-if="$v.clientGroup.$dirty && !$v.clientGroup.required"
-                                >Field is required</small>
                             </select>
+                            <small class="helper-text invalid"
+                                   v-if="$v.clientGroup.$dirty && !$v.clientGroup.required"
+                            >Field is required</small>
                         </div>
                     </div>
                     <div class="field">
                         <label for="attendDoc">Attending doctor* </label>
                         <div class="select-field">
-                            <select :selected="attendDoc" v-model="attendDoc" id="attendDoc">
-                                <option selected disabled>
-                                    Choose attending doctor
-                                </option>
+                            <select v-model="attendDoc" id="attendDoc">
                                 <option value="Ivanov">
                                     Ivanov
                                 </option>
@@ -302,7 +297,7 @@
             numberPhone: '',
             gender: '',
             attendDoc: '',
-            clientGroup: [],
+            clientGroup: '',
             sendSms: false,
             zipCode: '',
             country: '',
